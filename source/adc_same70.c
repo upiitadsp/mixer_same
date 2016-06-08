@@ -28,6 +28,6 @@ uint16_t adc_read(void){
     AFEC0->AFEC_CR = AFEC_CR_START;// Start conversion
     while(!(AFEC0->AFEC_ISR & AFEC_ISR_EOC0));//Wait until complete
     AFEC0->AFEC_CSELR = AFEC_CSELR_CSEL(0);//Select channel 0
-    return (AFEC0->AFEC_CDR & 0xFFC);
+    return ((AFEC0->AFEC_CDR >> 4) & 0xFFF);
 }
 
