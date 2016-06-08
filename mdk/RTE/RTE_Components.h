@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Component Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'c_12_adc_same70' 
+ * Project: 'mixer_same' 
  * Target:  'Target 1' 
  */
 
