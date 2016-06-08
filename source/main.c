@@ -27,7 +27,7 @@ int t0_counter = 0;
 int last_led_state = 0;
 void TC0_callback(){
     t0_counter++;
-    if(!(t0_counter < 500)){
+    if(!(t0_counter < 8000)){
         if(last_led_state){
             led_write(OFF);
             last_led_state = 0;
