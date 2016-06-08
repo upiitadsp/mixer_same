@@ -11,7 +11,7 @@ void timer0_init(int period){
     TC0->TC_CHANNEL[0].TC_CCR = TC_CCR_CLKEN | TC_CCR_SWTRG;//Enable clock and trigger counter
 }
 
-void __attribute__ ((weak)) TC0_callback(void){
+__attribute__ ((weak)) void TC0_callback(void){
 }
 
 void TC0_Handler(void){
