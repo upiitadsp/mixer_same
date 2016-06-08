@@ -1,4 +1,3 @@
-#include "sam.h"                        // Device header
 #include "watchdog_same70.h"
 #include "adc_same70.h"
 
