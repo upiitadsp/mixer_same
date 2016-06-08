@@ -12,7 +12,7 @@ int main(){
     adc_init();
     dac_init();
     led_init();
-    timer0_init(10000);
+    timer0_init(16000);
 
     led_write(ON);
     
@@ -20,5 +20,21 @@ int main(){
         adc_value = adc_read();
         dac_output(adc_value);
         count++;
+    }
+}
+
+int t0_counter = 0;
+int last_led_state = 0;
+void TC0_callback(){
+    t0_counter++;
+    if(!(t0_counter < 500)){
+        if(last_led_state){
+            led_write(OFF);
+            last_led_state = 0;
+        }else{
+            led_write(ON);
+            last_led_state = 1;
+        }
+        t0_counter = 0;
     }
 }

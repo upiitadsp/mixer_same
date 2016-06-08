@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-void timer0_init(int period);
+void timer0_init(int overflow_frequency);
 
 void TC0_callback(void);
 
