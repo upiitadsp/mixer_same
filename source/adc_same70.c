@@ -15,7 +15,7 @@ void adc_init(void){
         AFEC_MR_TRACKTIM(15) |
         AFEC_MR_TRANSFER(0) |
         AFEC_MR_USEQ_NUM_ORDER);
-    AFEC0->AFEC_EMR = AFEC_EMR_RES_OSR256 | AFEC_EMR_STM;
+    AFEC0->AFEC_EMR = AFEC_EMR_RES_OSR16 | AFEC_EMR_STM;
     AFEC0->AFEC_COCR = 512;
     AFEC0->AFEC_SEQ1R = 0;
     AFEC0->AFEC_SEQ2R = 0;
@@ -26,8 +26,8 @@ void adc_init(void){
 
 uint16_t adc_read(void){
     AFEC0->AFEC_CR = AFEC_CR_START;// Start conversion
-    while(!(AFEC0->AFEC_ISR & AFEC_ISR_EOC0));//Wait until complete
+    while(!(AFEC0->AFEC_ISR & AFEC_ISR_DRDY));//Wait until complete
     AFEC0->AFEC_CSELR = AFEC_CSELR_CSEL(0);//Select channel 0
-    return ((AFEC0->AFEC_CDR >> 4) & 0xFFF);
+    return ((AFEC0->AFEC_LCDR >> 2) & 0xFFF);
 }
 
