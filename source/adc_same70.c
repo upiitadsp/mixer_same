@@ -15,7 +15,7 @@ void adc_init(void){
         AFEC_MR_TRACKTIM(15) |
         AFEC_MR_TRANSFER(0) |
         AFEC_MR_USEQ_NUM_ORDER);
-    AFEC0->AFEC_EMR = 0;
+    AFEC0->AFEC_EMR = AFEC_EMR_RES_OSR256;
     AFEC0->AFEC_COCR = 512;
     AFEC0->AFEC_SEQ1R = 0;
     AFEC0->AFEC_SEQ2R = 0;
