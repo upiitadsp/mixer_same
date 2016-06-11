@@ -405,6 +405,16 @@
               <FileType>1</FileType>
               <FilePath>..\source\board.c</FilePath>
             </File>
+            <File>
+              <FileName>fir.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\fir.c</FilePath>
+            </File>
+            <File>
+              <FileName>kernels.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\kernels.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
